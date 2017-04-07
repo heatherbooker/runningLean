@@ -53,15 +53,27 @@ function DBClient () {
   };
 
   this.update = function(id, data) {
+    // idk???!
     return new Promise((resolve, reject) => {
-        this.client.query('update canvas set title=($1) where id=($2);',
-        [data.title, id], (err, result) => {
+      const queryData = [id];
+      Object.keys(data).forEach(prop => {
+        if (prop !== 'canvasid') {
+          if (prop === 'id') {
+            return console.log('ARJHBJB!');
+          }
+          queryData.push(prop, data[prop]);
+        }
+      });
+      console.log(queryData);
+      this.client.query(`this query sux`,
+        queryData, (err, result) => {
           if (err) {
+            console.error(err);
             return resolve(false);
           }
 
           resolve(true);
-        });
+      });
     });
   };
 

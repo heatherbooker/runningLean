@@ -26,8 +26,6 @@ router.get('/:id', (req, res, next) => {
   const id = req.params.id;
 
   dbClient.getById(id).then(canvas => {
-    console.log(canvas.fields);
-
     res.render('canvas', canvas);
   });
 });
@@ -35,9 +33,8 @@ router.get('/:id', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   const results = [];
   const id = req.params.id;
-  const title = req.body.title;
 
-  dbClient.update(id, {title}).then(didUpdate => {
+  dbClient.update(id, req.body).then(didUpdate => {
     if (didUpdate) {
       return res.sendStatus(200);
     }

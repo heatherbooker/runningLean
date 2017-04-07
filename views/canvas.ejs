@@ -11,7 +11,10 @@
     <div><%= id %></div>
 
     <% Object.keys(fields).forEach(prop => {%>
-      <input type="text" name="<% prop %>" value="<% fields[prop] %>">
+    <div>
+      <label><%= prop %></label>
+      <input type="text" name="<%= prop %>" value="<%= fields[prop] %>">
+    </div>
     <% }) %>
 
     <button id="rl-saveChanges">Save</button>

@@ -5,15 +5,15 @@ window.onload = function() {
   function getData() {
     const data = {
       title: document.querySelector('input[name="title"]').value,
-      // problem: document.querySelector('input[name="problem"]').value,
-      // solution: document.querySelector('input[name="solution"]').value,
-      // customerSegments: document.querySelector('input[name="customerSegments"]').value,
-      // uniqueValueProp: document.querySelector('input[name="uniqueValueProp"]').value,
-      // channels: document.querySelector('input[name="channels"]').value,
-      // costStructure: document.querySelector('input[name="costStructure"]').value,
-      // keyMetrics: document.querySelector('input[name="keyMetrics"]').value,
-      // unfairAdvantage: document.querySelector('input[name="unfairAdvantage"]').value,
-      // revenueStreams: document.querySelector('input[name="revenueStreams"]').value,
+      problem: document.querySelector('input[name="problem"]').value,
+      solution: document.querySelector('input[name="solution"]').value,
+      customerSegments: document.querySelector('input[name="customersegments"]').value,
+      uniqueValueProp: document.querySelector('input[name="uniquevalueproposition"]').value,
+      channels: document.querySelector('input[name="channels"]').value,
+      costStructure: document.querySelector('input[name="coststructure"]').value,
+      keyMetrics: document.querySelector('input[name="keymetrics"]').value,
+      unfairAdvantage: document.querySelector('input[name="unfairadvantage"]').value,
+      revenueStreams: document.querySelector('input[name="revenuestreams"]').value,
     };
     return data;
   }
