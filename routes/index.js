@@ -7,7 +7,6 @@ const db = require('../models/database.js');
 const dbClient = new db();
 
 
-// Route handling.
 router.get('/', function(req, res, next) {
 
   dbClient.getAll().then(canvases => {

@@ -27,6 +27,7 @@ function getCanvasFields (client, id) {
   });
 }
 
+
 function DBClient () {
 
   this.client = new pg.Client(DB_url);
@@ -53,27 +54,38 @@ function DBClient () {
   };
 
   this.update = function(id, data) {
-    // idk???!
     return new Promise((resolve, reject) => {
-      const queryData = [id];
-      Object.keys(data).forEach(prop => {
-        if (prop !== 'canvasid') {
-          if (prop === 'id') {
-            return console.log('ARJHBJB!');
-          }
-          queryData.push(prop, data[prop]);
-        }
-      });
-      console.log(queryData);
-      this.client.query(`this query sux`,
-        queryData, (err, result) => {
+
+      const canvasfieldsQueryData = [id, data.problem, data.solution,
+      data.customersegments, data.uniquevaluepropositon, data.channels,
+      data.coststructure, data.keymetrics, data.unfairadvantage,
+      data.revenuestreams];
+
+      return this.client.query(`update canvas set title=($2) where id=($1)`,
+        [id, data.title], (err, result) => {
           if (err) {
             console.error(err);
-            return resolve(false);
+            return reject(false);
           }
 
-          resolve(true);
+          resolve(canvasfieldsQueryData);
       });
+    }).then((data) => {
+
+      const queryString = `update canvasfields set problem=($2), solution=($3), 
+      customersegments=($4), uniquevalueproposition=($5), channels=($6),
+      coststructure=($7), keymetrics=($8), unfairadvantage=($9),
+      revenuestreams=($10) where canvasid=($1)`;
+
+      return this.client.query(queryString,
+        data, (err, result) => {
+
+          if (err) {
+            console.error(err);
+            return false;
+          }
+          return true;
+        });
     });
   };
 
