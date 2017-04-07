@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <form method="post" action="/canvas">
+      <button type="submit">Create New Canvas</button>    
+    </form>
+
+    <% for(var i = 0; i < canvases.length; i++) {%>
+      <div>
+        <%- link_to((canvases[i].title || '(no title)'), 'canvas/' + canvases[i].id) %>
+      </div>
+    <% } %>
+
   </body>
+
+
 </html>

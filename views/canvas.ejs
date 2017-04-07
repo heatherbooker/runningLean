@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Running Lean | <%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <input type="text" name="title" value="<%= title %>">
+    <div><%= id %></div>
+
+    <% for(var i = 0; i < boxes.length; i++) {%>
+      <input type="text" name="<% boxes[i].name %>" value="<% boxes[i].value %>">
+    <% } %>
+
+    <button id="rl-saveChanges">Save</button>
+
+  </body>
+
+  <script type="text/javascript" src="/javascripts/save-canvas.js"></script>
+
+</html>
