@@ -2,25 +2,55 @@
 <html>
 
   <head>
-    <title>Running Lean | <%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Running Lean | <%= title %> </title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel='stylesheet' href='/stylesheets/canvas.css' />
   </head>
 
   <body>
-    <label>title</label>
-    <input type="text" name="title" value="<%= title %>">
-
-    <% Object.keys(fields).forEach(prop => { if (prop === 'canvasid') {return;} %>
-    <div>
-      <label><%= prop %></label>
-      <input type="text" name="<%= prop %>" value="<%= fields[prop] %>">
+    <div class="rl-canvas">
+      <div class="rl-canvas-top">
+        <div class="rl-canvas-top-column">
+          <label class="rl-canvas--section-header">Problem</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+        <div class="rl-canvas-top-column">
+          <label class="rl-canvas--section-header">Solution</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+        <div class="rl-canvas-top-column">
+          <label class="rl-canvas--section-header">Unique Value Proposition</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+        <div class="rl-canvas-top-column">
+          <label class="rl-canvas--section-header">Unfair Advantage</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+        <div class="rl-canvas-top-column">
+          <label class="rl-canvas--section-header">Customer Segments</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+      </div>
+      <div class="rl-canvas-bottom">
+        <div class="rl-canvas-bottom-column">
+          <label class="rl-canvas--section-header">Cost Structure</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+        <div class="rl-canvas-bottom-column">
+          <label class="rl-canvas--section-header">Revenue Streams</label>
+          <img src="/assets/info-icon.svg" class="rl-canvas--info-icon">
+          <textarea></textarea>
+        </div>
+      </div>
     </div>
-    <% }) %>
-
-    <button id="rl-saveChanges">Save</button>
-
   </body>
 
-  <script type="text/javascript" src="/javascripts/save-canvas.js"></script>
+  <script type="text/javascript" src="/javascripts/canvas.js"></script>
 
 </html>
