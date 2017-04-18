@@ -1,3 +1,4 @@
+require('dotenv').config(); 
 const rl = require('readline').createInterface({input: process.stdin, output: process.stdout});
 
 const warning = `In order for this to work, you must have first created a psql db, have it
@@ -37,10 +38,8 @@ function createTables() {
       CustomerSegments text default '',
       UniqueValueProposition text default '',
       Solution text default '',
-      Channels text default '',
       RevenueStreams text default '',
       CostStructure text default '',
-      KeyMetrics text default '',
       UnfairAdvantage text default ''
     );
   `);

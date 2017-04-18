@@ -1,0 +1,25 @@
+.rl-landing-header {
+  font-size: 100px;
+  font-family: "Sansita-BlackItalic";
+  text-align: center;
+}
+
+.rl--new-canvas-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rl--new-canvas-button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  background: #5EE96D;
+  cursor: pointer;
+}
+
+.rl--new-canvas-button:hover {
+  background: #64DE71;
+}

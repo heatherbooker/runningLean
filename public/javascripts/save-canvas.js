@@ -1,23 +1,19 @@
 window.onload = function() {
 
   const canvasId = location.pathname.split('/')[2];
-  const saveBtn = document.querySelector('#rl-saveChanges');
-  saveBtn.onclick = sendUpdate;
   window.onkeyup = (e) => { e.key === 'Enter' ? sendUpdate() : null };
 
 
   function getData () {
     const data = {
-      title: document.querySelector('input[name="title"]').value,
-      problem: document.querySelector('input[name="problem"]').value,
-      solution: document.querySelector('input[name="solution"]').value,
-      customersegments: document.querySelector('input[name="customersegments"]').value,
-      uniquevalueproposition: document.querySelector('input[name="uniquevalueproposition"]').value,
-      channels: document.querySelector('input[name="channels"]').value,
-      coststructure: document.querySelector('input[name="coststructure"]').value,
-      keymetrics: document.querySelector('input[name="keymetrics"]').value,
-      unfairadvantage: document.querySelector('input[name="unfairadvantage"]').value,
-      revenuestreams: document.querySelector('input[name="revenuestreams"]').value,
+      //title: document.querySelector('textarea[name="title"]').value,
+      problem: document.querySelector('textarea[name="problem"]').value,
+      solution: document.querySelector('textarea[name="solution"]').value,
+      customersegments: document.querySelector('textarea[name="customersegments"]').value,
+      uniquevalueproposition: document.querySelector('textarea[name="uniquevalueproposition"]').value,
+      coststructure: document.querySelector('textarea[name="coststructure"]').value,
+      unfairadvantage: document.querySelector('textarea[name="unfairadvantage"]').value,
+      revenuestreams: document.querySelector('textarea[name="revenuestreams"]').value,
     };
     return data;
   }
@@ -37,7 +33,7 @@ window.onload = function() {
 
     fetch(url, options).then(didUpdate => {
       if (didUpdate) {
-        alert("cool we'll think about " + data.title + '.');
+        console.log('Save successful.');
       }
     });
   };
