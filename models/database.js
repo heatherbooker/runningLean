@@ -57,7 +57,7 @@ function DBClient () {
     return new Promise((resolve, reject) => {
 
       const canvasfieldsQueryData = [id, data.problem, data.solution,
-      data.customersegments, data.uniquevaluepropositon, data.channels,
+      data.customersegments, data.uniquevalueproposition, data.channels,
       data.coststructure, data.keymetrics, data.unfairadvantage,
       data.revenuestreams];
 
