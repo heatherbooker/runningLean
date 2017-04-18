@@ -11,9 +11,7 @@ window.onload = function() {
       solution: document.querySelector('textarea[name="solution"]').value,
       customersegments: document.querySelector('textarea[name="customersegments"]').value,
       uniquevalueproposition: document.querySelector('textarea[name="uniquevalueproposition"]').value,
-      //channels: document.querySelector('textarea[name="channels"]').value,
       coststructure: document.querySelector('textarea[name="coststructure"]').value,
-      //keymetrics: document.querySelector('textarea[name="keymetrics"]').value,
       unfairadvantage: document.querySelector('textarea[name="unfairadvantage"]').value,
       revenuestreams: document.querySelector('textarea[name="revenuestreams"]').value,
     };

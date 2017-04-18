@@ -38,10 +38,8 @@ function createTables() {
       CustomerSegments text default '',
       UniqueValueProposition text default '',
       Solution text default '',
-      Channels text default '',
       RevenueStreams text default '',
       CostStructure text default '',
-      KeyMetrics text default '',
       UnfairAdvantage text default ''
     );
   `);

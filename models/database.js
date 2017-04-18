@@ -57,8 +57,8 @@ function DBClient () {
     return new Promise((resolve, reject) => {
 
       const canvasfieldsQueryData = [id, data.problem, data.solution,
-      data.customersegments, data.uniquevalueproposition, data.channels,
-      data.coststructure, data.keymetrics, data.unfairadvantage,
+      data.customersegments, data.uniquevalueproposition,
+      data.coststructure, data.unfairadvantage,
       data.revenuestreams];
 
       return this.client.query(`update canvas set title=($2) where id=($1)`,
@@ -73,9 +73,9 @@ function DBClient () {
     }).then((data) => {
 
       const queryString = `update canvasfields set problem=($2), solution=($3), 
-      customersegments=($4), uniquevalueproposition=($5), channels=($6),
-      coststructure=($7), keymetrics=($8), unfairadvantage=($9),
-      revenuestreams=($10) where canvasid=($1)`;
+      customersegments=($4), uniquevalueproposition=($5),
+      coststructure=($6), unfairadvantage=($7),
+      revenuestreams=($8) where canvasid=($1)`;
 
       return this.client.query(queryString,
         data, (err, result) => {
